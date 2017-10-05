@@ -3,6 +3,8 @@
 
 This is a Bash [Drone](https://github.com/drone/drone) plugin to deploy build artifacts to Bitbucket.
 
+For more information on how to use the plugin, please take a look at [the docs](https://github.com/AlbinoDrought/drone-bitbucket-artifacts/blob/master/DOCS.md).
+
 ## Docker
 Build the docker image by running:
 
