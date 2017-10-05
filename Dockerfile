@@ -1,6 +1,6 @@
 FROM alpine:3.4
 MAINTAINER AlbinoDrought <albinodrought@gmail.com>
-LABEL maintainer="AlbinoDrought <albinodrought@gmail.com>
+LABEL maintainer="AlbinoDrought <albinodrought@gmail.com>"
 
 LABEL org.label-schema.version=latest
 LABEL org.label-schema.description="Drone plugin for deploying build artifacts to Bitbucket Downloads"
