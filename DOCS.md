@@ -101,7 +101,7 @@ pipeline:
       - source: AUTH_STRING
         target: plugin_auth_string
 
-  artifact-lcov-report
+  artifact-lcov-report:
     image: albinodrought/drone-bitbucket-artifacts
     file: "lcov-report-${DRONE_COMMIT_BRANCH}-${DRONE_COMMIT_SHA}.tar.gz"
     repo_owner: albinodrought
@@ -113,7 +113,6 @@ pipeline:
     secrets:
       - source: AUTH_STRING
         target: plugin_auth_string
-
 
   artifact-build:
     image: albinodrought/drone-bitbucket-artifacts
