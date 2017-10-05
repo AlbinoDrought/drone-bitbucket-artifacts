@@ -13,7 +13,7 @@ docker build --rm=true -t albinodrought/drone-bitbucket-artifacts .
 ```
 
 ## Usage
-Execute from the working directory:
+To publish artifacts, execute the following from the working directory:
 
 ```bash
 docker run --rm \
@@ -21,6 +21,24 @@ docker run --rm \
   -e PLUGIN_REPO_OWNER="albinodrought" \
   -e PLUGIN_REPO_SLUG="hello-world" \
   -e PLUGIN_FILE="foo.txt" \
+  -v $(pwd):$(pwd) \
+  -w $(pwd) \
+  albinodrought/drone-bitbucket-artifacts
+```
+
+To publish and link artifacts, execute the following form the working directory:
+
+```bash
+docker run --rm \
+  -e PLUGIN_AUTH_STRING="username:app-password" \
+  -e PLUGIN_REPO_OWNER="albinodrought" \
+  -e PLUGIN_REPO_SLUG="hello-world" \
+  -e PLUGIN_FILE="foo.txt" \
+  -e PLUGIN_LINK="true" \
+  -e DRONE_COMMIT_SHA="6107f58e83a7c7db89e8e63762d668eb095cdd9f" \
+  -e PLUGIN_ARTIFACT_KEY="drone-bitbucket-artifacts" \
+  -e PLUGIN_ARTIFACT_NAME="Artifact" \
+  -e PLUGIN_ARTIFACT_DESCRIPTION="cool build artifact" \
   -v $(pwd):$(pwd) \
   -w $(pwd) \
   albinodrought/drone-bitbucket-artifacts
