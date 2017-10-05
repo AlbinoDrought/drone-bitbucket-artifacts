@@ -31,3 +31,24 @@ pipeline:
 
 See the [Secret Guide](http://readme.drone.io/usage/secret-guide/) for additional information on secrets.
 
+## Examples
+
+```yaml
+pipeline:
+  build:
+    image: albinodrought/node-alpine-gcc-make-ssh
+    commands:
+      - npm run build
+      - tar -cvzf "build-${DRONE_COMMIT_BRANCH}-${DRONE_COMMIT_SHA}.tar.gz" dist
+
+  artifact:
+    image: albinodrought/drone-bitbucket-artifacts
+    file: "build-${DRONE_COMMIT_BRANCH}-${DRONE_COMMIT_SHA}.tar.gz"
+    repo_owner: albinodrought
+    repo_slug: hello-world
+    secrets:
+      - source: AUTH_STRING
+        target: plugin_auth_string
+```
+
+The example above uses string interpolation to change the filename based upon branch and commit hash using drone-provided environment variables. A reference can be found [here](http://readme.drone.io/0.5/usage/environment-reference/). 
