@@ -1,5 +1,6 @@
 # drone-bitbucket-artifacts
 [![drone-bitbucket-artifacts on Docker Hub](https://img.shields.io/docker/automated/albinodrought/drone-bitbucket-artifacts.svg)](https://hub.docker.com/r/albinodrought/drone-bitbucket-artifacts/)
+[![Docker Pulls](https://img.shields.io/docker/pulls/albinodrought/drone-bitbucket-artifacts.svg)](https://hub.docker.com/r/albinodrought/drone-bitbucket-artifacts)
 
 This is a Bash [Drone](https://github.com/drone/drone) plugin to deploy build artifacts to Bitbucket.
 
